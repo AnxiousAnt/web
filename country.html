@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Capitals</title>
+    <style>
+              #capital {
+            color: blue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+     </style>
+</head>
+<body>
+    <h1>Select a Country and See Its Capital</h1>
+    <div>
+        <select id="countryList" onchange="showCapital()">
+            <option value="">Select a country</option>
+            <option value="USA">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Japan">Japan</option>
+        </select>
+        <p id="capital"></p>
+    </div>
+  <script>
+        function showCapital() {
+        const countryList = document.getElementById("countryList");
+        const capital = document.getElementById("capital");
+
+        const selectedCountry = countryList.value;
+
+        switch (selectedCountry) {
+            case "USA":
+                capital.textContent = "Washington, D.C.";
+                break;
+            case "UK":
+                capital.textContent = "London";
+                break;
+            case "France":
+                capital.textContent = "Paris";
+                break;
+            case "Germany":
+                capital.textContent = "Berlin";
+                break;
+            case "Japan":
+                capital.textContent = "Tokyo";
+                break;
+            default:
+                capital.textContent = "";
+                break;
+        }
+    }
+
+  </script>
+</body>
+</html>

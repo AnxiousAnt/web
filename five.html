@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+</head>
+<body>
+    <h1>Car Information</h1>
+    <div id="carInfo"></div>
+
+    <script>
+        // Base class Vehicle
+        class Vehicle {
+            constructor(make, model) {
+                this.make = make;
+                this.model = model;
+            }
+        }
+
+        // Derived class Car inheriting from Vehicle
+        class Car extends Vehicle {
+            constructor(make, model, year) {
+                super(make, model);
+                this.year = year;
+            }
+        }
+
+        // Create an instance of Car
+        const myCar = new Car("Toyota", "Camry", 2022);
+
+        // Display the car information in HTML
+        const carInfoDiv = document.getElementById("carInfo");
+        carInfoDiv.innerHTML = `
+            <p>Make: ${myCar.make}</p>
+            <p>Model: ${myCar.model}</p>
+            <p>Year: ${myCar.year}</p>
+        `;
+    </script>
+</body>
+</html>
